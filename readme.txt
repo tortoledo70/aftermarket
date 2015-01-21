@@ -7,11 +7,11 @@
 
 
 
-< About >
+[ About ]
 
     > aftermarket.py was written to automate the process of installing an arsenal of tools used for pentesting.
 
-< Usage >
+[ Usage ]
 
     > You can clone the aftermarket repository with the following command:
         
@@ -21,7 +21,7 @@
     
        >> python aftermarket.py
 
-< Process >
+[ Process ]
     
     > The script is written to be executed in the "/root" path. 
       The script will be aborted if it is executed anywhere else.
@@ -58,7 +58,7 @@
     > This list will be shown in STDOUT as well as written to a text file called browser_links.txt for later use.
 
 
-< Why It's Written>
+[ Why It's Written ]
 
     > After reading The Hacker Playbook, written by Peter Kim, I had found value in the setup phase at the beginning
       of the book. This phase illustrated to the reader how they should set up their fresh installation of Kali Linux. 
@@ -79,7 +79,7 @@
       things like this, such as Lazykali. However, my goal was not to create an interactive-oriented tool that presents a whole lot
       of options. I simply needed to automate the tasks required to install these tools to my system, and that is exactly what this script does.
 
-< Credit >
+[ Credit ]
 
     > I'd like to recognize Peter Kim for the information he provided within his book. This script probably would not have been written otherwise.
       I highly recommend it to anyone involved in pentesting, regardless of skill level. You can purchase it on Amazon (http://www.amazon.com/dp/1494932636),
