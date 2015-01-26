@@ -30,7 +30,7 @@ print "\033[1;37m=\033[1;m" * 95
 
 print """\033[1;32m
 [*]\033[1;m\033[1;37mAftermarket will perform the following actions on your system:
-  >> Update the root password (prompted for change with 'passwd')
+  >> Update the root password (prompted for change with 'passwd', this is optional.)
   >> Update system repositories.
   >> Update system distribution.
   >> Update system packages.
@@ -64,10 +64,15 @@ else:
     print "\033[1;31m[!]\033[1;m\033[1;37mAftermarket Aborted!\033[1;m"
     sys.exit()
 
-print "\033[1;32m[*]\033[1;m\033[1;37mStarting root password update:\033[1;m"
-os.system('passwd')
+passwd = raw_input('\033[1;32m[*]\033[1;m\033[1;37mWould you like to change your password? (Y / n): \033[1;m')
+if passwd == "Y" or passwd == "YES" or passwd == "Yes" or passwd == "yes" or passwd == "y" or passwd == "":
+    print "\033[1;32m[*]\033[1;m\033[1;37mStarting root password update:\033[1;m"
+    os.system('passwd')
+    print "\033[1;32m[*]\033[1;m\033[1;37mDone.\033[1;m"
+else:
+    print "\033[1;32m[*]\033[1;m\033[1;37mLeaving password unchanged.\033[1;m"
 
-print "\033[1;32m[*]\033[1;m\033[1;37mDone.\033[1;m"
+raw_input("\033[1;32m[*]\033[1;m\033[1;37mPress\033[1;m\033[1;33m[ENTER]\033[1;m")
 
 print "\033[1;32m[*]\033[1;m\033[1;37mUpdating repositories...\033[1;m"
 os.system('apt-get update')
@@ -79,7 +84,7 @@ print "\033[1;32m[*]\033[1;m\033[1;37mStarting Metasploit Services...\033[1;m"
 os.system('service postgresql start')
 os.system('service metasploit start')
 
-metasploit_log = raw_input("\033[1;32m[*]\033[1;m\033[1;37mEnable Logging for Metasploit? (Y / N): \033[1;m")
+metasploit_log = raw_input("\033[1;32m[*]\033[1;m\033[1;37mEnable Logging for Metasploit? (Y / n): \033[1;m")
 if metasploit_log == "Y" or metasploit_log == "YES" or metasploit_log == "Yes" or metasploit_log == "yes" or metasploit_log == "y" or metasploit_log == "":
     os.system('echo "spool /root/msf_console.log" > /root/.msf4/msfconsole.rc')
 else:
@@ -89,8 +94,8 @@ else:
     print '\033[1;37mecho "spool /root/msf_console.log" > /root/.msf4/msfconsole.rc\033[1;m'
 
 print ""
-raw_input("\033[1;32m[*]\033[1;m\033[1;37mPress ENTER to continue-\033[1;m")
-metasploit_startup = raw_input("\033[1;32m[*]\033[1;m\033[1;37mEnable Services on Startup for Metasploit? (Y / N)\033[1;m")
+raw_input("\033[1;32m[*]\033[1;m\033[1;37mPress\033[1;m\033[1;33m[ENTER]\033[1;m")
+metasploit_startup = raw_input("\033[1;32m[*]\033[1;m\033[1;37mEnable Services on Startup for Metasploit? (Y / n)\033[1;m")
 if metasploit_startup == "Y" or metasploit_startup == "YES" or metasploit_startup == "Yes" or metasploit_startup == "yes" or metasploit_startup == "y" or metasploit_startup == "":
     os.system('update-rc.d metasploit enable')
     os.system('update-rc.d postgresql enable')
