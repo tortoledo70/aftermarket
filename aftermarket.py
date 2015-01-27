@@ -54,6 +54,7 @@ print """\033[1;32m
   >> BypassUAC
   >> BeEF
   >> Burp Suite Fuzzing Lists
+  >> Ropeme
   >> Extra Tools (named gitlist, this is a HUGE repo of tools to add to your arsenal).\033[1;m
 """
 
@@ -176,6 +177,10 @@ print "\033[1;32m[*]\033[1;m\033[1;37mDone.\033[1;m"
 
 print "\033[1;32m[*]\033[1;m\033[1;37mInstalling fuzzing lists for Burp Suite...\033[1;m"
 os.system('cd /opt && git clone https://github.com/danielmiessler/SecLists.git')
+print "\033[1;32m[*]\033[1;m\033[1;37mDone.\033[1;m"
+
+print "\033[1;32m[*]\033[1;m\033[1;37mInstalling Ropeme...\033[1;m"
+os.system('cd /opt && git clone https://github.com/packz/ropeme.git')
 print "\033[1;32m[*]\033[1;m\033[1;37mDone.\033[1;m"
 
 print "\033[1;32m[*]\033[1;m\033[1;37mInstalling Extra Tools (Gitlist)...\033[1;m"
